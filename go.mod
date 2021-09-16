@@ -14,7 +14,6 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
-	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/lib/pq v0.0.0-20180327071824-d34b9ff171c2
 	github.com/mitchellh/mapstructure v1.4.1 // indirect
 	github.com/moby/term v0.0.0-20201216013528-df9cb8a40635
@@ -22,7 +21,7 @@ require (
 	github.com/opencontainers/image-spec v1.0.1
 	github.com/opencontainers/runc v1.0.0-rc9
 	github.com/pkg/errors v0.9.1
-	github.com/sirupsen/logrus v1.4.2
+	github.com/sirupsen/logrus v1.8.1
 	github.com/stretchr/testify v1.4.0
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	golang.org/x/net v0.0.0-20201021035429-f5854403a974
