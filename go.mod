@@ -26,5 +26,5 @@ require (
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	golang.org/x/net v0.0.0-20201224014010-6772e930b67b
 	golang.org/x/sys v0.0.0-20210426230700-d19ff857e887
-	gotest.tools/v3 v3.0.3
+	gotest.tools/v3 v3.1.0
 )
