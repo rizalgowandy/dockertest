@@ -3,7 +3,7 @@ module github.com/ory/dockertest/v3
 go 1.13
 
 require (
-	github.com/Microsoft/go-winio v0.5.1
+	github.com/Microsoft/go-winio v0.6.0
 	github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5
 	github.com/cenkalti/backoff/v4 v4.1.2
 	github.com/containerd/continuity v0.0.0-20190827140505-75bee3e2ccb6
@@ -24,7 +24,7 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 	github.com/stretchr/testify v1.7.0
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
-	golang.org/x/net v0.0.0-20201224014010-6772e930b67b
-	golang.org/x/sys v0.0.0-20210426230700-d19ff857e887
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b
+	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f
 	gotest.tools/v3 v3.0.3
 )
