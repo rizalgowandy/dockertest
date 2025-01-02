@@ -1,4 +1,5 @@
 `./db/image/Dockerfile`
+
 ```Dockerfile
 FROM postgres:latest
 
@@ -6,10 +7,16 @@ FROM postgres:latest
 ```
 
 `./db_test.go`
+
 ```go
 pool, err := dockertest.NewPool("")
 if err != nil {
-	log.Fatalf("Could not connect to docker: %s", err)
+	log.Fatalf("Could not construct pool: %s", err)
+}
+
+err = pool.Client.Ping()
+if err != nil {
+	log.Fatalf("Could not connect to Docker: %s", err)
 }
 
 // Build and run the given Dockerfile

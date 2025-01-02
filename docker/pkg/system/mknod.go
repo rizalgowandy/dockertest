@@ -1,4 +1,8 @@
-// +build !windows
+// Copyright © 2024 Ory Corp
+// SPDX-License-Identifier: Apache-2.0
+
+//go:build !windows && !freebsd
+// +build !windows,!freebsd
 
 package system // import "github.com/ory/dockertest/v3/docker/pkg/system"
 

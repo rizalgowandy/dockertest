@@ -4,7 +4,12 @@ var err error
 
 pool, err := dockertest.NewPool("")
 if err != nil {
-    log.Fatalf("Could not connect to docker: %s", err)
+    log.Fatalf("Could not construct pool: %s", err)
+}
+
+err = pool.Client.Ping()
+if err != nil {
+    log.Fatalf("Could not connect to Docker: %s", err)
 }
 
 options := &dockertest.RunOptions{
@@ -34,6 +39,7 @@ if err := pool.Retry(func() error {
     if err != nil {
         return err
     }
+    defer resp.Body.Close()
     if resp.StatusCode != http.StatusOK {
         return fmt.Errorf("status code not OK")
     }

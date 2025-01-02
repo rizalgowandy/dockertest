@@ -1,3 +1,6 @@
+// Copyright © 2024 Ory Corp
+// SPDX-License-Identifier: Apache-2.0
+
 package strslice // import "github.com/ory/dockertest/v3/docker/types/strslice"
 
 import (
@@ -29,8 +32,8 @@ func TestStrSliceMarshalJSON(t *testing.T) {
 
 func TestStrSliceUnmarshalJSON(t *testing.T) {
 	parts := map[string][]string{
-		"":   {"default", "values"},
-		"[]": {},
+		"":                        {"default", "values"},
+		"[]":                      {},
 		`["/bin/sh","-c","echo"]`: {"/bin/sh", "-c", "echo"},
 	}
 	for json, expectedParts := range parts {

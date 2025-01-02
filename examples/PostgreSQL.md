@@ -20,7 +20,12 @@ func TestMain(m *testing.M) {
 	// uses a sensible default on windows (tcp/http) and linux/osx (socket)
 	pool, err := dockertest.NewPool("")
 	if err != nil {
-		log.Fatalf("Could not connect to docker: %s", err)
+		log.Fatalf("Could not construct pool: %s", err)
+	}
+
+	err = pool.Client.Ping()
+	if err != nil {
+		log.Fatalf("Could not connect to Docker: %s", err)
 	}
 
 	// pulls an image, creates a container based on it and runs it
@@ -60,15 +65,15 @@ func TestMain(m *testing.M) {
 	}); err != nil {
 		log.Fatalf("Could not connect to docker: %s", err)
 	}
-	//Run tests
-	code := m.Run()
 
-	// You can't defer this because os.Exit doesn't care for defer
-	if err := pool.Purge(resource); err != nil {
-		log.Fatalf("Could not purge resource: %s", err)
-	}
+	defer func() {
+		if err := pool.Purge(resource); err != nil {
+			log.Fatalf("Could not purge resource: %s", err)
+		}
+	}()
 
-	os.Exit(code)
+	// run tests
+	m.Run()
 }
 
 func TestRealbob(t *testing.T) {
